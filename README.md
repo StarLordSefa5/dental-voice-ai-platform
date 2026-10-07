@@ -32,6 +32,26 @@ An enterprise-ready, autonomous clinic management platform powered by **Voice AI
 ## 📋 Getting Started
 
 ### 1. Clone the repository
-```bash
+```bash```
 git clone [https://github.com/StarLordSefa5/dental-voice-ai-platform.git](https://github.com/StarLordSefa5/dental-voice-ai-platform.git)
 cd dental-voice-ai-platform
+
+2. Install dependencies
+
+npm install
+
+3. Environment Variables
+Create a .env file in the root directory and provide your credentials:
+
+VITE_SUPABASE_URL=your_supabase_project_url
+VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+VITE_CAL_API_KEY=your_cal_api_key
+
+4. Run the development server
+
+npm run dev
+
+👤 Author
+Developed by Sefa Elgün
+
+GitHub: @StarLordSefa5
