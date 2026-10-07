@@ -1,16 +1,37 @@
-# React + Vite
+# 🦷 Autonomous Dental Clinic Voice AI & Operations Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+An enterprise-ready, autonomous clinic management platform powered by **Voice AI (Vapi.ai)**, **Cal.com API v2**, **n8n**, **React**, and **Supabase**. The system answers patient calls 24/7, performs natural language triage, checks live doctor availability, and synchronizes appointments with zero human intervention.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Key Highlights & Architecture
 
-## React Compiler
+* **Autonomous Voice Inbound Agent (Vapi.ai):** Low-latency (~1.2s) conversational pipeline using **Deepgram Nova 2 (Turkish)** for STT and **GPT-4o Mini** for real-time reasoning and tool calling.
+* **Function Calling & Dynamic Tooling:** The voice assistant executes real-time functions:
+  * `musaitlik`: Checks real-time calendar availability.
+  * `randevu_olustur`: Books new slots into the clinic schedule.
+  * `Randevu_Guncelle_Iptal`: Modifies or cancels existing appointments.
+  * `randevu_sorgula`: Inquires active appointment details.
+  * `gecikme_bildir`: Handles late arrival notifications.
+* **Intelligent Triage & Orchestration (n8n):** Routes clinical complaints to relevant specialists (e.g., Implant & Surgery to Dr. Emre, General Checkup to Dr. Zeynep).
+* **Two-Way Calendar Sync (Cal.com v2 API):** Locks calendar slots dynamically and prevents double-booking.
+* **Live Receptionist & Doctor Console (React + Supabase):** Real-time clinic dashboard that receives instantaneous appointment updates and cancellation events via WebSocket subscriptions.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the Oxlint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+* **Frontend:** React.js, Vite, Modern CSS
+* **Database & Realtime:** Supabase (PostgreSQL, Realtime WebSockets)
+* **Voice AI Pipeline:** Vapi.ai, Deepgram Nova-2, OpenAI GPT-4o Mini
+* **Workflow Automation:** n8n (Webhooks & Logic Engine)
+* **Scheduling Engine:** Cal.com API v2
+
+---
+
+## 📋 Getting Started
+
+### 1. Clone the repository
+```bash
+git clone [https://github.com/StarLordSefa5/dental-voice-ai-platform.git](https://github.com/StarLordSefa5/dental-voice-ai-platform.git)
+cd dental-voice-ai-platform
